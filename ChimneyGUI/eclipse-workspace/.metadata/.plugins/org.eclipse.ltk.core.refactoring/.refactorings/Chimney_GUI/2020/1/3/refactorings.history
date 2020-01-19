@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Chimney_GUI/src/application/test.fxml&apos; to &apos;ui.fxml&apos;" description="Rename resource &apos;test.fxml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/application/test.fxml" name="ui.fxml" stamp="1579189235622" updateReferences="true"/>
+</session>

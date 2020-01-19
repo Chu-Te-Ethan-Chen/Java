@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javafx.scene.Parent"/>
+<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+<fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
+<fullyQualifiedTypeName name="javafx.scene.control.ComboBox"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextArea"/>
+</qualifiedTypeNameHistroy>

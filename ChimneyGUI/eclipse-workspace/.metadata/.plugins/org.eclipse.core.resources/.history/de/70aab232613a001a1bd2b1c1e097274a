@@ -1,0 +1,63 @@
+//607238002 2019_3_19
+/////Given/////
+/*1.the height of the chimney
+  2.the discharging rate of the pollutants
+  3.the wind speed and direction*/
+/////Goal/////
+/*1.calculate the concentration at each point between the start point and the end point*/
+/////Constraints/////
+/*1.the position of each point should be stored in a 1-D array
+  2.calculate the concentration in a method instead of in the main
+  3.use while loop*/
+package HW03;
+import java.util.Scanner;
+public class HW03 {
+    public static void main(String[] args) {
+        int i, interval;//i:counter;
+        double start, end, segment;//segment:unit length
+        Scanner scanner= new Scanner(System.in);
+        //////////set the start point, the end point and the interval//////////
+        while(true){
+            System.out.println("Enter the start point! EX:1000");
+            start= scanner.nextDouble();
+            System.out.println("Enter the end point! EX:2000");
+            end= scanner.nextDouble();
+            if (start<end) {
+                break;
+            }
+            System.out.println("Error! Enter the value again.\n");
+        }
+        System.out.println("Enter the interval you want! EX:10");
+        interval=scanner.nextInt();
+
+        segment=(end-start)/(double)interval;//there will be n segments when a line is divided by n interval
+        double[] arrayPositions=new double[interval+1];//arrayPositions stores the Positions that should be calculated
+        double[] arrayConcentration=new double[interval+1];//arrayConcentration stores the concentration at each position
+        //////////set the X value at each point//////////
+        for(i=0;i<=interval;i++){
+            arrayPositions[i]=start+segment*i;
+        }
+        //////////calculate the concentration at each point//////////
+        G_model(arrayPositions, arrayConcentration, interval);
+        //////////display//////////
+        for(i=0;i<=interval;i++){
+            System.out.println("The concentration of pollutants at "+arrayPositions[i] +" is "+arrayConcentration[i]);
+        }
+    }
+
+    public static void G_model(double[] arrayP, double[] arrayC, int interval){
+        double sigmaY, sigmaZ, C;//C: the concentration of the pollutants
+        int H=20, Q=20, u=3, y=0, z=0, i=0;//H:the height of the chimney; Q:pollutants discharge rate; u=wind speed
+        //////////calculate the concentration at each point//////////
+        while(i<=interval){
+        sigmaY=0.22*arrayP[i]*Math.pow((1+0.0001*arrayP[i]), -0.5);//sigmaY:the deviation of the pollutants in the y-axis
+        sigmaZ=0.001*arrayP[i];//sigmaZ the deviation of the pollutants in the z-axis
+        C=((double)Q/(2*Math.PI*(double)u*sigmaY*sigmaZ))*
+                Math.exp(-Math.pow(y, 2)/(2*Math.pow(sigmaY, 2)))*
+                (Math.exp(-Math.pow((z-H), 2)/(2*Math.pow(sigmaZ, 2)))
+                        +Math.exp(-Math.pow((z+H), 2)/(2*Math.pow(sigmaZ, 2))));
+        arrayC[i]=C;
+        i++;
+        }
+    }
+}
