@@ -1,3 +1,4 @@
+![](https://upload.wikimedia.org/wikipedia/commons/1/10/Gaussian_Plume.png)
 ![](https://github.com/Jordon-Chen/Java/blob/master/ChimneyGUI/eclipse-workspace/ChimneyGUI/step1.jpg?raw=true)
 ![](https://github.com/Jordon-Chen/Java/blob/master/ChimneyGUI/eclipse-workspace/ChimneyGUI/step2.jpg?raw=true)
 ![](https://github.com/Jordon-Chen/Java/blob/master/ChimneyGUI/eclipse-workspace/ChimneyGUI/step3.jpg?raw=true)
